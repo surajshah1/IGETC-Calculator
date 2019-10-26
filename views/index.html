@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>
+            IGETC Calculator
+        </title>
+        <script>src = "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"</script>
+        <script>src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"</script>     
+        <style>
+            .list {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0px;
+                padding: 10px 0 0;
+            }
+            .list > li, .extra {
+                display: block;
+                background-color: #cccccc;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    <p>Welcome to the IGETC Calculator!</p>
+    <p>Please Enter your courses taken...</p>
+    <div id="courses">
+        <button class="sort" data-sort="Course Title">Sort by course title</button>
+        <button class="sort" data-sort="Course Number">Sort by course number</button>
+        <ul class = "list" id="courselist">
+            <li>
+                <span class ="cname">Course</span>      
+            </li>
+        </ul>
+        <div class= "extra">
+            <form action= "/courses" method="post"> 
+                <input type="text" id="cname-field" name = "course" placeholder="Course"/>
+                <button type="submit" id="add-btn">Add Class</button>
+            </form> 
+        </div>
+      </div>
+    <a href="/calculation" class="button"> Calculate! </a>
+    </body>
+    <script type="text/javascript">
+    document.getElementById("add-btn").onclick = function() {
+        var text = document.getElementById("cname-field").value; 
+        text = text.toUpperCase();
+        console.log(text);
+        var li = "<li>" + text + "</li>";
+        document.getElementById("courselist").innerHTML += li;
+        //document.getElementById("cname-field").value = ""; 
+          }
+          </script>
+</html>
