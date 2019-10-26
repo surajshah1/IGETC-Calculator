@@ -22,6 +22,7 @@ app.post('/courses', function(req, res) {
 
 function calculate(req, res) {
     var options = {
+        pythonOptions: ['-u'],
         args:
         [
         courses

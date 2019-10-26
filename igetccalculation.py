@@ -42,7 +42,6 @@ def compareClasses(inputClassesTaken):
                 outputareas.append(areas)
     return outputareas    
 
-x = compareClasses(inputClassesTaken))
+x = compareClasses(inputClassesTaken)
 print(x)
-sys.stdout.flush() 
 
