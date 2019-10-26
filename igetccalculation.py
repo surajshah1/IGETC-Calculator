@@ -1,9 +1,8 @@
 import xlrd
 
-
 path = "book.xlsx"
 inputWorkbook = xlrd.open_workbook(path)
-inputWorksheet = inputWorkbook.sheet_by_index(0)
+inputWorksheet = inputWorkbook.sheet_by_index(0)         
 
 majors = {}
 
@@ -34,41 +33,33 @@ for x in range(1,65):
     igetcareas["area4"].append(inputWorksheet.cell_value(x,4))
 
 
-print(igetcareas)
-class inputClassesTaken:
-    """
-    Take in data from UI to create a student profile of classes
-    """
-    area1 = []
-    area2 = []
-    area3 = []
-    area4 = []
-    area5a = []
-    area5b = []
-    igetcsareas = {} 
-    def __init__(a1, a2, a3, a4):
-        self.area1 = a1
-        self.area2 = a2
-        self.area3 = a3
 
 
-
-
-def compareClasses(inputClassesTaken: inputClassesTaken):
+def compareClasses(inputClassesTaken):
     """
     Input classes and compare to lists of classes in area to output list of classes required in each area
-
     """
+    outputareas = []
+    for inputclass in inputClassesTaken:
+        for area in igetcareas:
+            if inputclass not in igetcareas[area]:
+                outputareas.append(area)
+    return outputareas
 
-    return 1
+inputclasses = ["MATH 104", "ENGL 101B", "ART 131", "CHEM 112A"]
 
+print(compareClasses(inputclasses))
+            
 def compareMajor(major, possibleClasses):
     """
     take in string from major and compare to output of compareClasses to shorten possible list
     """
+
     return 1
 
 def calculateSemesters():
     """
     Calculate time needed in each semester to finish igetc requirements
     """
+    return 1
+                                                    
